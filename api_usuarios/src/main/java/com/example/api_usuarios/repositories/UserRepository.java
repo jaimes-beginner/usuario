@@ -17,13 +17,7 @@ public interface UserRepository extends JpaRepository<User, Integer> {
     // Método para buscar un usuario por su correo electrónico.
     User findByEmail(String email);
     
-    // Método que trae un usuario activo dependiendo de su email
-    User findByNombre(String email, Boolean activo);
+    // aca la cagé, poner bien los finds asgdagsag
 
-    // Método que trae a mas de un usuario que estén activos
-    List<User> findByActivo(Boolean activo);
-
-    
-    User findByEmailActivo(String email, Boolean activo);
 
 }

@@ -8,7 +8,6 @@ import java.util.Date;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 import com.example.api_usuarios.models.entities.User;
@@ -63,4 +62,10 @@ public class UserServices {
         }
     }
 
+
+    private String generarHash(String password) {
+        PasswordEncoder hasheador = new BCr
+        // importar cosas
+
+    }
 }
