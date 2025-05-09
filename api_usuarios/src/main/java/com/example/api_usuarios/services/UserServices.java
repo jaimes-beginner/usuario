@@ -8,6 +8,7 @@ import java.util.Date;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 import com.example.api_usuarios.models.entities.User;
@@ -45,6 +46,8 @@ public class UserServices {
 
     // Registrar a un nuevo usuario
     public User registrarUsuario(UserCrear usuario) {
+
+        try {
         User nuevoUser = new User();    
         // campos de negocio
         nuevoUser.setActivo(true);
@@ -55,6 +58,9 @@ public class UserServices {
         nuevoUser.setTelefono(usuario.getTelefono());
         nuevoUser.setNombre(usuario.getNombre());
         return userRepo.save(nuevoUser);
+        } catch (Exception e) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"Usuario registrado");
+        }
     }
 
 }
